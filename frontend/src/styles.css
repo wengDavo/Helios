@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'NikeFutura';
+    src: url('../public/font/NikeFutura/NikeFutura.otf');
+}
+
+@font-face {
+    font-family: 'HelveticaNueLight';
+    src: url('../public/font/HelveticaNeue/helvetica-light.ttf');
+}
+@font-face {
+    font-family: 'HelveticaNueLightItalic';
+    src: url('../public/font/HelveticaNeue/helvetica-light-italic.ttf');
+}
+@font-face {
+    font-family: 'HelveticaNueMedium';
+    src: url('../public/font/HelveticaNeue/HelveticaNeueMedium.ttf');
+}
+
+@layer components{
+    .hide-scrollbar{
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .hide-scrollbar::-webkit-scrollbar{
+        display: none;
+    }
+}
