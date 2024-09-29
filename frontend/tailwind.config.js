@@ -17,7 +17,8 @@ module.exports = {
         },
         tertiary:{
           grey:'#CCCCCC',
-          white:'#E5E5E5'
+          white:'#E5E5E5',
+          red:'#9E3500'
         }
       }
     },
