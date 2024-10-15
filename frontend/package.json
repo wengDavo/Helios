@@ -19,8 +19,11 @@
     "@angular/platform-browser": "^18.0.0",
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/router": "^18.0.0",
+    "@types/three": "^0.169.0",
+    "angular-three": "^2.5.1",
     "material-icons": "^1.13.12",
     "rxjs": "~7.8.0",
+    "three": "^0.169.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },

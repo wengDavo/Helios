@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 
-
 @Component({
   selector: 'app-hero',
   standalone: true,
@@ -8,7 +7,7 @@ import { Component, inject } from '@angular/core';
   template: `
     <section class="grid gap-y-10">
       <figure class="">
-        <img src="images/homeHeroImage.png" alt="" width="1344" height="700" />
+        <img src="images/home/heroImage.png" alt="" width="1344" height="700" loading="lazy" />
       </figure>
       <article class="text-center">
         <p class="font-medium text-sm">First Look</p>

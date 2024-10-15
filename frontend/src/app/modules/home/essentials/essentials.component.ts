@@ -14,6 +14,7 @@ import { Component } from '@angular/core';
             alt="essentials"
             width="440"
             height="540"
+            loading="lazy"
           />
           <figcaption
             class="bg-white absolute bottom-8 left-6 rounded-3xl px-5 py-2"
@@ -27,6 +28,7 @@ import { Component } from '@angular/core';
             alt="essentials"
             width="440"
             height="540"
+            loading="lazy"
           />
           <figcaption
             class="bg-white absolute bottom-8 left-6 rounded-3xl px-5 py-2"
@@ -40,6 +42,7 @@ import { Component } from '@angular/core';
             alt="essentials"
             width="440"
             height="540"
+            loading="lazy"
           />
           <figcaption
             class="bg-white absolute bottom-8 left-6 rounded-3xl px-5 py-2"

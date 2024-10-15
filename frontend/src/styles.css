@@ -21,12 +21,38 @@
     src: url('../public/font/HelveticaNeue/HelveticaNeueMedium.ttf');
 }
 
+@layer base{
+    body::-webkit-scrollbar{
+        width: 5px;        
+    }
+    body::-webkit-scrollbar-track{
+        background-color: #1e1e1e 
+    }
+    body::-webkit-scrollbar-thumb{
+        background-color: #FFFFFF;
+    }
+  
+}
+
 @layer components{
+    .nike-futura{
+        font-family: 'NikeFutura';
+    }
+    .helvetica-nue-light{
+        font-family: 'HelveticaNueLight';
+    }
+    .helvetica-nue-italic{
+        font-family: 'HelveticaNueLightItalic';
+    }
+    .helvetica-nue-medium{
+        font-family: 'HelveticaNueMedium';
+    }
+
     .hide-scrollbar{
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
     .hide-scrollbar::-webkit-scrollbar{
         display: none;
-    }
+    }       
 }

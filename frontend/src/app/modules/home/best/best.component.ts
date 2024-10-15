@@ -1,18 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 //
-import { SliderButtonsComponent } from '../slider-buttons/slider-buttons.component';
 import { BestItemComponent } from '../best-item/best-item.component';
-import { bestItemI } from '../best-item/best-item.interface';
+import { productI } from '../../../shared/services/product/product.interface';
+//
+import { ProductService } from '../../../shared/services/product/product.service';
 
 @Component({
   selector: 'app-best',
   standalone: true,
-  imports: [MatIcon, BestItemComponent, SliderButtonsComponent],
+  imports: [
+    MatIcon,
+    BestItemComponent,
+  ],
   template: `
     <section class="flex p-3 justify-between gap-y-6">
       <h2 class="font-medium text-xl">Best Of Air Max</h2>
-      <app-slider-buttons [title]="title"/>
     </section>
     <section class="flex gap-2 overflow-x-auto hide-scrollbar">
       @for (item of featuredItems; track $index) {
@@ -23,46 +26,11 @@ import { bestItemI } from '../best-item/best-item.interface';
   styles: ``,
 })
 export class BestComponent implements OnInit {
-  title: string = 'shop'
-  featuredItems!: Array<bestItemI>;
+  title: string = 'shop';
+  featuredItems: Array<productI>;
+  protected productServ = inject(ProductService);
+
   ngOnInit(): void {
-    this.featuredItems = [
-      {
-        image_url: 'images/shoeImage.png',
-        name: 'Nike Air Max Pulse',
-        category: "Women's shoes",
-        price: 13955,
-      },
-      {
-        image_url: 'images/shoeImage.png',
-        name: 'Nike Air Max Pulse',
-        category: "Men's shoes",
-        price: 13955,
-      },
-      {
-        image_url: 'images/shoeImage.png',
-        name: 'Nike Air Max 97 SE',
-        category: "Men's shoes",
-        price: 16955,
-      },
-      {
-        image_url: 'images/shoeImage.png',
-        name: 'Nike Air Max 97 SE',
-        category: "Men's shoes",
-        price: 16955,
-      },
-      {
-        image_url: 'images/shoeImage.png',
-        name: 'Nike Air Max 97 SE',
-        category: "Men's shoes",
-        price: 16955,
-      },
-      {
-        image_url: 'images/shoeImage.png',
-        name: 'Nike Air Max 97 SE',
-        category: "Men's shoes",
-        price: 16955,
-      },
-    ];
+    this.featuredItems = this.productServ.getProducts();
   }
 }

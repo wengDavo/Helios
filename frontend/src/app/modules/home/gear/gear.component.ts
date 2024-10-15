@@ -1,17 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { GearUnitComponent } from '../gear-unit/gear-unit.component';
-import { gearUnitI } from '../gear-unit/gear-unit.interface';
-
+import { Component, inject, OnInit } from '@angular/core';
+import { ProductService } from '../../../shared/services/product/product.service';
+import { SliderComponent } from '../../../shared/components/slider/slider.component';
+import { GearItemComponent } from '../gear-item/gear-item.component';
+import { productI } from '../../../shared/services/product/product.interface';
 @Component({
   selector: 'app-gear',
   standalone: true,
-  imports: [GearUnitComponent],
+  imports: [GearItemComponent, SliderComponent],
   template: `
     <section class="grid gap-y-6">
       <h2 class="font-medium text-xl">Gear Up</h2>
       <div class="grid grid-cols-2 gap-8">
         @for (item of gearUnits; track $index) {
-        <app-gear-unit [data]="item" />
+        <app-slider [title]="item.title">
+          @for (gear of item.gearItems; track $index) {
+          <app-gear-item [data]="gear" #sliderItem />
+          }
+        </app-slider>
         }
       </div>
     </section>
@@ -19,48 +24,23 @@ import { gearUnitI } from '../gear-unit/gear-unit.interface';
   styles: ``,
 })
 export class GearComponent implements OnInit {
-  title: string = 'Gear Up';
-  gearUnits!: Array<gearUnitI>;
+  protected title: string = 'Gear Up';
+  protected gearUnits: Array<{
+    title: string
+    gearItems: Array<productI>
+  }>;
+  private prodServ = inject(ProductService);
 
   ngOnInit(): void {
+    let gearItems = this.prodServ.getProducts();
     this.gearUnits = [
       {
         title: `Shop Men's`,
-        gearItems: [
-          {
-            image_url: 'images/homeGearItem.png',
-            name: 'Nike Dri-FIT ADV TechKnit Ultra',
-            category: "Men's Shirt",
-            price: 3895,
-            type: 'Short-Sleeve Running Top',
-          },
-          {
-            image_url: 'images/homeGearItem.png',
-            name: 'Nike Dri-FIT ADV TechKnit Ultra',
-            category: "Men's Shirt",
-            price: 3895,
-            type: 'Short-Sleeve Running Top',
-          },
-        ],
+        gearItems: [...gearItems],
       },
       {
         title: `Shop Women's`,
-        gearItems: [
-          {
-            image_url: 'images/homeGearItem.png',
-            name: 'Nike Dri-FIT ADV TechKnit Ultra',
-            category: "Men's Shirt",
-            price: 3895,
-            type: 'Short-Sleeve Running Top',
-          },
-          {
-            image_url: 'images/homeGearItem.png',
-            name: 'Nike Dri-FIT ADV TechKnit Ultra',
-            category: "Men's Shirt",
-            price: 3895,
-            type: 'Short-Sleeve Running Top',
-          },
-        ],
+        gearItems: [...gearItems],
       },
     ];
   }

@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
   imports: [],
   template: `
     <section
-      class="bg-primary-white flex py-2 px-3 text-sm items-center justify-between"
+      class="bg-primary-white flex py-2 px-6 text-sm items-center justify-between"
     >
       <figure>
-        <img src="customIcons/airJordan.svg" alt="" />
+        <img src="customIcons/airJordan.svg" alt=""  />
       </figure>
       <article class="bg-white p-1 ">
         <button>Skip to main content</button>

@@ -9,7 +9,7 @@ import { appname } from '../../../core/services/appname.config';
   standalone: true,
   imports: [MatIcon],
   template: `
-    <footer class="bg-primary-black text-secondary-grey pt-10 pb-2 px-8 grid gap-y-6">
+    <footer class="bg-primary-black text-primary-grey pt-10 pb-2 px-8 grid gap-y-6">
       <section class="grid grid-cols-2">
         <article class="grid grid-cols-3 gap-x-3">
           @for (item of footerLinks; track $index) {
@@ -17,7 +17,7 @@ import { appname } from '../../../core/services/appname.config';
             <h3 class="font-medium text-white">{{ item.title }}</h3>
             <menu class="grid gap-y-3">
               @for (item of item.links; track $index) {
-              <li class="text-secondary-grey">{{ item.name }}</li>
+              <li class="text-primary-grey">{{ item.name }}</li>
               }
             </menu>
           </div>
@@ -25,19 +25,19 @@ import { appname } from '../../../core/services/appname.config';
         </article>
         <article class="flex items-start gap-4 justify-end">
           <span
-            class="bg-secondary-grey p-1 grid placecontent-center w-fit rounded-full"
+            class="bg-primary-grey p-1 grid placecontent-center w-fit rounded-full"
             ><mat-icon class="text-primary-black">eco</mat-icon></span
           >
           <span
-            class="bg-secondary-grey p-1 grid placecontent-center w-fit rounded-full"
+            class="bg-primary-grey p-1 grid placecontent-center w-fit rounded-full"
             ><mat-icon class="text-primary-black">rocket_launch</mat-icon></span
           >
           <span
-            class="bg-secondary-grey p-1 grid placecontent-center w-fit rounded-full"
+            class="bg-primary-grey p-1 grid placecontent-center w-fit rounded-full"
             ><mat-icon class="text-primary-black">explore</mat-icon></span
           >
           <span
-            class="bg-secondary-grey p-1 grid placecontent-center w-fit rounded-full"
+            class="bg-primary-grey p-1 grid placecontent-center w-fit rounded-full"
             ><mat-icon class="text-primary-black">sailing</mat-icon></span
           >
         </article>

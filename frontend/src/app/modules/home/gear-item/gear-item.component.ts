@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { bestItemI } from '../best-item/best-item.interface';
+import { productI } from '../../../shared/services/product/product.interface';
 
 @Component({
   selector: 'app-gear-item',
@@ -8,20 +8,20 @@ import { bestItemI } from '../best-item/best-item.interface';
   template: `
     <article class="w-fit grid gap-2 min-w-[300px]">
       <figure>
-        <img [src]="data.image_url" alt="an item" width="300" height="300" />
+        <img [src]="data.images.main" alt="an item" width="300" height="300" loading="lazy" />
       </figure>
       <div class="flex justify-between ">
         <div class="text-sm">
-          <p>{{ data.name }}</p>
-          <p class="text-primary-grey text-xs">{{ data.category }}</p>
-          <p class="text-primary-grey text-xs">{{ data.type }}</p>
+          <p>{{ data.info.name }}</p>
+          <p class="text-primary-grey text-xs">{{ data.info.category }}</p>
+          <p class="text-primary-grey text-xs">{{ data.info.type }}</p>
         </div>
-        <p>{{ data.price }}</p>
+        <p>{{ data.info.price }}</p>
       </div>
     </article>
   `,
   styles: ``,
 })
 export class GearItemComponent {
-  @Input() data!: bestItemI;
+  @Input() data: productI;
 }

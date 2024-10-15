@@ -9,7 +9,7 @@ export class FeaturedService {
   getFeaturedSection() {
     return {
       title: 'featured',
-      image: '/images/homeFeaturedImage.png',
+      image: '/images/home/featuredImage.png',
       message: 'step into what feels good',
       description: `Because everyone should know the feeling of
               running in that perfect pair`,
@@ -20,7 +20,7 @@ export class FeaturedService {
   getDontMissSection() {
     return {
       title: `Don't Miss`,
-      image: '/images/homeDontMiss.png',
+      image: '/images/home/dontMiss.png',
       message: 'flight essentials',
       description: `Your built-to-last, all-week wears—but with style only Jordan Brand can deliver.`,
       button_decription: 'Shop',

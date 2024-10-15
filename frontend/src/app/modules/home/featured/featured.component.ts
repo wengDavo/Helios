@@ -9,7 +9,7 @@ import { featuredI } from './featured.interface';
     <section class="grid gap-y-6">
       <h2 class="font-medium text-xl capitalize">{{data.title}}</h2>
       <figure>
-        <img [src]="data.image" alt="" width="1344" height="700"/>
+        <img [src]="data.image" alt="" width="1344" height="700" loading="lazy" />
       </figure>
       <article class="text-center mt-4">
         <h3 class="text-[36px] font-medium uppercase">

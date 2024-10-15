@@ -6,7 +6,7 @@ import { MatIcon } from '@angular/material/icon';
   standalone: true,
   imports: [MatIcon],
   template: `
-    <section class="flex items-center justify-between">
+    <section class="flex items-center justify-between px-4">
       <figure>
         <img src="customIcons/logo.svg" alt="" />
       </figure>
